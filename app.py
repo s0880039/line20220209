@@ -45,7 +45,48 @@ def index():
                 text = events[0]["message"]["text"]
 
                 if text == "我的名字":
-                    payload["messages"] = [getNameEmojiMessage()]
+                    payload["messages"] = [{
+                                            "type": "text",
+                                            "text": "$$$$$$$",
+                                            "emojis": [
+                                              {
+                                                "index": 0,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "023"
+                                              },
+                                              {
+                                                "index": 1,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "035"
+                                              },
+                                              {
+                                                "index": 2,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "038"
+                                              },
+                                              {
+                                                "index": 3,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "038"
+                                              },
+                                              {
+                                                "index": 4,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "035"
+                                              },
+                                              {
+                                                "index": 5,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "027"
+                                              },
+                                              {
+                                                "index": 6,
+                                                "productId": "5ac21a8c040ab15980c9b43f",
+                                                "emojiId": "039"
+                                              }
+                                            ]
+                                        }
+                                         ]
                 elif text == "出去玩囉":
                     payload["messages"] = [getPlayStickerMessage()]
                 elif text == "台北101":

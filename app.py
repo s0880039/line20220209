@@ -231,13 +231,13 @@ def getLocationConfirmMessage(title, latitude, longitude):
                   "actions": [
                       {
                        "type": "postback",
-                       "label": "台北101",
-                       "data": "action=buy&itemid=111"
+                       "label": "是",
+                       "data": json.dumps(data),
                       },
                       {
                         "type": "message",
-                        "label": "No",
-                        "text": "no"
+                        "label": "否",
+                        "text": "否"
                       }
                   ]
               }

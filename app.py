@@ -246,7 +246,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
 
 
 def getCallCarMessage(data):
-     message = {
+    message = {
       "type": "template",
       "altText": "this is a template",
       "template": {

@@ -251,7 +251,7 @@ def getCallCarMessage(data):
       "altText": "this is a confirm template",
       "template": {
           "type": "buttons",
-          "text": f"請選擇至{data["title"]}預約叫車時間",
+          "text": f"請選擇至 {data['title']} 預約叫車時間",
           "actions": [
               {
                "type": "datetimepicker",

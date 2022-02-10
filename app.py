@@ -181,7 +181,7 @@ def getNameEmojiMessage():
               "emojiId": f"{lookUpStr.index(nChar) + 1 :03}"
             }
         )
-    message["emojis"] = 
+    message["emojis"] = emojis_list
     return message
 
 

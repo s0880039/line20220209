@@ -53,10 +53,9 @@ def index():
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()]
                 elif text == "台北101圖":
-                    payload["messages"] = [getTaipei101ImageMessage()]      
+                    payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "台北101影片":
                     payload["messages"] = [getMRTVideoMessage()]
-                    
                 elif text == "quoda":
                     payload["messages"] = [
                             {
@@ -97,7 +96,7 @@ def index():
                                         "uri": f"tel:{my_phone}"
                                       }
                                   ]
-                              }
+                                }
                             }
                         ]
                 else:
@@ -109,7 +108,7 @@ def index():
                         ]
                 replyMessage(payload)
             elif events[0]["message"]["type"] == "location":
-                title = events[0]["message"]["title"]
+                title = events[0]["message"].get("title", "")
                 latitude = events[0]["message"]["latitude"]
                 longitude = events[0]["message"]["longitude"]
                 payload["messages"] = [getLocationConfirmMessage(title, latitude, longitude)]
@@ -173,7 +172,7 @@ def sendTextMessageToMe():
 def getNameEmojiMessage():
     lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     productId = "5ac21a8c040ab15980c9b43f"
-    name = "William"
+    name = "Miles"
     message = dict()
     message["type"] = "text"
     message["text"] = "".join("$" for r in range(len(name)))
@@ -202,7 +201,7 @@ def getCarouselMessage(data):
                 "action": {
                   "type": "postback",
                   "label": "台北101",
-                  "data": "json.dumps(data)"
+                  "data": json.dumps(data)
                 }
               },
               {
@@ -210,7 +209,7 @@ def getCarouselMessage(data):
                 "action": {
                   "type": "postback",
                   "label": "台北101",
-                  "data": "json.dumps(data)"
+                  "data": json.dumps(data)
                 }
               }
           ]
@@ -220,27 +219,28 @@ def getCarouselMessage(data):
 
 
 def getLocationConfirmMessage(title, latitude, longitude):
-    data = {'title':title, 'latitude':latitude, 'longitude':longitude, 'action': 'get_near'}
+    data = {'title': title, 'latitude': latitude, 'longitude': longitude,
+            'action': 'get_near'}
     message = {
-              "type": "template",
-              "altText": "this is a confirm template",
-              "template": {
-                  "type": "confirm",
-                  "text": f"確認是否搜尋{title}附近地點？",
-                  "actions": [
-                      {
-                       "type": "postback",
-                       "label": "是",
-                       "data": json.dumps(data),
-                      },
-                      {
-                        "type": "message",
-                        "label": "否",
-                        "text": "否"
-                      }
-                  ]
+      "type": "template",
+      "altText": "this is a confirm template",
+      "template": {
+          "type": "confirm",
+          "text": f"確認是否搜尋 {title} 附近地點？",
+          "actions": [
+              {
+                 "type": "postback",
+               "label": "是",
+               "data": json.dumps(data),
+               },
+              {
+                "type": "message",
+                "label": "否",
+                "text": "否"
               }
-            }
+          ]
+      }
+    }
     return message
 
 
@@ -267,8 +267,8 @@ def getCallCarMessage(data):
 def getPlayStickerMessage():
     message = dict()
     message["type"] = "sticker"
-    message["packageId"] = "11537"
-    message["stickerId"] = "52002736"
+    message["packageId"] = "446"
+    message["stickerId"] = "1988"
     return message
 
 
@@ -286,7 +286,7 @@ def getMRTVideoMessage():
     message = dict()
     message["type"] = "video"
     message["originalContentUrl"] = F"{end_point}/static/taipei_101_video.mp4"
-    message["previewImageUrl"] = F"{end_point}/static/taipei_1.jpeg"
+    message["previewImageUrl"] = F"{end_point}/static/taipei_101.jpeg"
     return message
 
 
@@ -302,7 +302,7 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):          
+def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
     return getImageMessage(originalContentUrl)
 
 

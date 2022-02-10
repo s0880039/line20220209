@@ -222,7 +222,7 @@ def getTaipei101LocationMessage():
 def getMRTVideoMessage():
     message = dict()
     message["type"] = "video"
-    message["originalContentUrl"] = F"{end_point}/static/taipei_101_video"
+    message["originalContentUrl"] = "https://www.youtube.com/watch?v=fcco2fT20_o&ab_channel=Ani-OneAsia"
     message["previewImageUrl"] = F"{end_point}/static/taipei_1"
     
     return message

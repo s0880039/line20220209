@@ -277,8 +277,8 @@ def getTaipei101LocationMessage():
     message["type"] = "location"
     message["title"] = "台北101"
     message["address"] = "110台北市信義區信義路五段7號"
-    message["latitude"] = "25.034056468449304"
-    message["longitude"] = "121.56466736984362"
+    message["latitude"] = 25.034056468449304
+    message["longitude"] = 121.56466736984362
     return message
 
 

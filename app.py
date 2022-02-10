@@ -231,6 +231,10 @@ def getMRTSoundMessage():
 
 
 def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F6%2F6b%2FTower_of_Taipei_101.jpg&imgrefurl=https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%25E5%258F%25B0%25E5%258C%2597101&tbnid=i-v0WFN7o9WOHM&vet=12ahUKEwjayJSyyfT1AhVHXZQKHeR8A6kQMygAegUIARC0AQ..i&docid=HGJkoIfq45kdsM&w=1520&h=2048&q=%E5%8F%B0%E5%8C%97101&ved=2ahUKEwjayJSyyfT1AhVHXZQKHeR8A6kQMygAegUIARC0AQ"
+    message["previewImageUrl"] = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F6%2F6b%2FTower_of_Taipei_101.jpg&imgrefurl=https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%25E5%258F%25B0%25E5%258C%2597101&tbnid=i-v0WFN7o9WOHM&vet=12ahUKEwjayJSyyfT1AhVHXZQKHeR8A6kQMygAegUIARC0AQ..i&docid=HGJkoIfq45kdsM&w=1520&h=2048&q=%E5%8F%B0%E5%8C%97101&ved=2ahUKEwjayJSyyfT1AhVHXZQKHeR8A6kQMygAegUIARC0AQ"
+            
     return getImageMessage(originalContentUrl)
 
 

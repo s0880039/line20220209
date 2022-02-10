@@ -58,6 +58,9 @@ def index():
                 elif text == "台北101影片":
                     payload["messages"] = [getMRTVideoMessage()]
                     
+                elif text == "音檔":
+                    payload["messages"] = [getMRTSoundMessage()]
+                    
                 elif text == "quoda":
                     payload["messages"] = [
                             {

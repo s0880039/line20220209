@@ -58,9 +58,6 @@ def index():
                 elif text == "台北101影片":
                     payload["messages"] = [getMRTVideoMessage()]
                     
-                elif text == "音檔":
-                    payload["messages"] = [getMRTSoundMessage()]
-                    
                 elif text == "quoda":
                     payload["messages"] = [
                             {
@@ -219,6 +216,11 @@ def getPlayStickerMessage():
 
 def getTaipei101LocationMessage():
     message = dict()
+    message["type"] = "location"
+    message["title"] = "my location"
+    message["address"] = "110台北市信義區信義路五段7號"
+    message["latitude"] = "25.034056468449304"
+    message["longitude"] = "121.56466736984362"
     return message
 
 
